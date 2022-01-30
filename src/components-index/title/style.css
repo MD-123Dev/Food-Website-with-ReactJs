@@ -1,0 +1,14 @@
+.titl-sty{
+    text-align: centre;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 21px;
+    margin-left: 500px;
+   
+}
+.border{
+ border-bottom: 3px;
+ border-color: rgb(64, 199, 31) !important;
+ width:120px;
+  margin-left: 530px;
+}

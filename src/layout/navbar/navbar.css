@@ -1,0 +1,57 @@
+
+ 
+
+.pos-styl {
+    margin-left: 490px;
+}
+
+.sty-about,
+.sty-home,
+.sty-princ {
+
+    font-size: 25px;
+}
+
+.nav-link {
+    color: rgb(20, 20, 20);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.nav-link:hover {
+    color: rgb(11, 211, 54);
+    text-decoration: underline;
+
+}
+
+.sty-navb {
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+.navbar-brand {
+    color: rgb(20, 20, 20);
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial,
+    sans-serif;
+}
+
+.navbar-brand:hover {
+    color: rgb(37, 112, 197);
+}
+
+.sty-icon-favorie,
+.sty-icon-shop{
+    margin-left: 6px;
+    margin-right: 6px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 21px;
+}
