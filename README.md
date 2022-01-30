@@ -2,9 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Site :
 
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/43389513/131227553-03ee7a77-8e47-445b-ac7b-3c6c629047f3.gif)
 
 
 ## Available Scripts
