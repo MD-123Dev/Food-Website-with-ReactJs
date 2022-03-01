@@ -1,79 +1,71 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import './style.css'
+
+import React, {  useRef } from "react";
 import food1 from '../../images/food1.jpg'
 import food2 from '../../images/food3.jpg'
 import food3 from '../../images/food6.jpg'
 import food4 from '../../images/food4.jpg'
 import food5 from '../../images/food9.jpg'
 import food6 from '../../images/food5.jpg'
+import './style.css'
+
+const Carousel = (props) => {
+   
+    const carousel = useRef(null);
+     const content = useRef(null);
+    const prev = useRef(null);
+    const next = useRef(null);
 
 
-class Carousel extends Component {
-  
-    carouselRight(){
+   const carouselRight = () =>{
+        
         const gap = 6;
 
-            //**get html  */
-            const carousel = document.getElementById("carousel"),
-            content = document.getElementById("content"),
-            next = document.getElementById("next"),
-            prev = document.getElementById("prev");
-
-            //**get width carousel . */
-            let width = carousel.offsetWidth;//**offsetWisth : The offsetWidth property returns the viewable width of an element in pixels, including padding, border and scrollbar, but not the margin. */
+        
+            let width = carousel.current.offsetWidth;
 
 
            
-            carousel.scrollBy(width + gap, 0);
-            if (carousel.scrollWidth !== 0) {//**for display icon preveux to back  */
-                prev.style.display = "flex";
+            carousel.current.scrollBy(width + gap, 0);
+            if (carousel.current.scrollWidth !== 0) {
+                prev.current.style.display = "flex";
             }
-            if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-                next.style.display = "none";
+            if (content.current.scrollWidth - width - gap <= carousel.current.scrollLeft + width) {
+                next.current.style.display = "none";
             }
+
+          
            
             
           
     }
 
-    carouselLeft(){
+   const  carouselLeft = () =>{
+       
           const gap = 6;
 
-            //**get html  */
-            const carousel = document.getElementById("carousel"),
-            content = document.getElementById("content"),
-            next = document.getElementById("next"),
-            prev = document.getElementById("prev");
+          
+            let width = carousel.current.offsetWidth;
 
-            //**get width carousel . */
-            let width = carousel.offsetWidth;// 
+            carousel.current.scrollBy(-(width + gap), 0);
 
-            carousel.scrollBy(-(width + gap), 0);//**for scroll contenus ( The scrollBy() method scrolls the document by the specified number of pixels.) */
-
-            if (carousel.scrollLeft - width - gap <= 0) {//**for display icon preveux to back  */
-                prev.style.display = "none";
+            if (carousel.current.scrollLeft - width - gap <= 0) {
+                prev.current.style.display = "none";
             }
-            if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-                next.style.display = "flex";
+            if (!content.scrollWidth - width - gap <= carousel.current.scrollLeft + width) {
+                next.current.style.display = "flex";
             }
 
             
     }
 
-    render() {
-       
-         
-        return (
-            
-            <div>
+    return (
+      <div>
                 
                <div style={{top:'210px', left:'430'}} >
        
             <div id="wrapper">
-              <div id="carousel">
-                <div id="content">
+              <div id="carousel" ref={carousel}>
+                <div id="content" ref={content}>
                   
                     <div>
                       
@@ -96,18 +88,17 @@ class Carousel extends Component {
                     </div>
                 </div>
               </div>
-              <button id="prev">
-                <i className="fa fa-chevron-left" onClick={this.carouselLeft}></i>
+              <button id="prev" ref={prev}>
+                <i className="fa fa-chevron-left" onClick={carouselLeft}></i>
               </button>
-              <button id="next">
-                <i className="fa fa-chevron-right" onClick={this.carouselRight}></i>
+              <button id="next" ref={next}>
+                <i className="fa fa-chevron-right" onClick={carouselRight}></i>
               </button>
            </div>
       </div>
                
             </div> 
-        )
-    }
+    )
 }
 
 export default Carousel
