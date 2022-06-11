@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Search from '../Search/Search';
 import Menu from '../menu/Menu.js';
@@ -56,7 +55,7 @@ class IndexPage extends Component {
                            <Title title="Featured Product" />
                             <div className="row mt-5">
                                 <div className="col-md-3 col-sm-3">
-                                   <Card title="since ists has nes " image = { image5 } />
+                                 <Link to="/detail"><Card title="since ists has nes " image = { image5 } /></Link> 
                                 </div>
                                 <div className="col-md-3 col-sm-3">
                                   <Card title="since ists has nes " image = { image2 } />
